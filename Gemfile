@@ -2,5 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'byebug'
+gem 'dry-cli'
 gem 'standard'
 gem 'zeitwerk'
