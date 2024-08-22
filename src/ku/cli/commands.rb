@@ -16,6 +16,8 @@ module Ku
         prefix.register 'get', Secrets::Get, aliases: ['g']
         prefix.register 'set', Secrets::Set, aliases: ['g']
       end
+
+      register 'database', Database, aliases: ['db']
     end
   end
 end
