@@ -1,0 +1,49 @@
+#compdef ku
+
+_ku() {
+  local context line state state_descr
+
+  _arguments -C \
+    '1:command:->command' \
+    '2:subcommand:->subcommand' \
+    '*:arguments:->arguments' && return 0
+
+  case $state in
+    command)
+      _values "commands" \
+        "context" \
+        "exec" \
+        "logs" \
+        "pods" \
+        "secret" \
+        "switch" \
+        "database"
+      ;;
+    subcommand)
+      case $line[1] in
+        secret)
+          _values "subcommands" \
+            "get" \
+            "set"
+          ;;
+      esac
+      ;;
+    arguments)
+      case $line[1] in
+        secret)
+          if [[ $line[2] == "get" || $line[2] == "set" ]]; then
+            _ku_get_secrets
+          fi
+          ;;
+      esac
+      ;;
+  esac
+}
+
+_ku_get_secrets() {
+  local secrets
+  secrets=(${(f)"$(ku secret)"})
+  _values "secrets" $secrets
+}
+
+compdef _ku ku
