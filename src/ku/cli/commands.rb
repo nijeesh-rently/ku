@@ -10,6 +10,7 @@ module Ku
       register 'pods', Pods, aliases: ['p']
       register 'context', Context, aliases: ['c']
       register 'switch', Contexts::Switch, aliases: ['s']
+      register 'exec', Exec, aliases: ['e']
     end
   end
 end
