@@ -18,7 +18,7 @@ module Ku
           return @current_context if @current_context
 
           # we can't use the command builder here because it would create a circular dependency
-          result = `kubectl config current-context`
+          result = `#{CommandBuilder::BASE_COMMAND} config current-context`
           @current_context = result.strip! || result
         end
 
