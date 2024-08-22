@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# remove symlink
+echo "Removing symlink from /usr/local/bin/ku"
+rm /usr/local/bin/ku
