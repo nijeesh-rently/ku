@@ -34,40 +34,40 @@ Once installed, you can use the `ku` command to interact with your Kubernetes cl
 - **List all contexts:**
 
   ```bash
-  ku run context
+  ku context
   ```
 
 - **Connect to a PostgreSQL database inside a pod:**
 
   ```bash
-  ku run database NAME
+  ku database NAME
   ```
 
 - **Execute a command inside a pod:**
 
   ```bash
-  ku run exec NAME [COMMAND]
+  ku exec NAME [COMMAND]
   ```
 
 - **Get logs from a pod:**
 
   ```bash
-  ku run logs NAME [FILTER]
+  ku logs NAME [FILTER]
   ```
 
 - **Manage secrets:**
 
   ```bash
-  ku run secret [ARGUMENT] [SUBCOMMAND]
+  ku secret [ARGUMENT] [SUBCOMMAND]
   ```
 
-  - `ku run secret get`: Retrieve environment variables from a pod.
-  - `ku run secret set`: Set environment variables in a pod.
+  - `ku secret get`: Retrieve environment variables from a pod.
+  - `ku secret set`: Set environment variables in a pod.
 
 - **Switch between namespaces:**
 
   ```bash
-  ku run switch NAMESPACE
+  ku switch NAMESPACE
   ```
 
 For more information on available commands, use the `--help` option:
