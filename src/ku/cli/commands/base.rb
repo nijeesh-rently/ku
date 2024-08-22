@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module Ku
   module CLI
     module Commands
+      # base command class all commands inherit from
       class Base < Dry::CLI::Command
         def initialize(**)
           @command_builder = CommandBuilder.new

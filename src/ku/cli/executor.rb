@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 module Ku
   module CLI
+    # it executes the command
     class Executor
       def initialize(command_builder)
         @command_builder = command_builder
