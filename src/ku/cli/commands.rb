@@ -9,6 +9,7 @@ module Ku
       register 'logs', Logs, aliases: ['l']
       register 'pods', Pods, aliases: ['p']
       register 'context', Context, aliases: ['c']
+      register 'switch', Contexts::Switch, aliases: ['s']
     end
   end
 end
