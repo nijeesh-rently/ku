@@ -11,6 +11,11 @@ module Ku
       register 'context', Context, aliases: ['c']
       register 'switch', Contexts::Switch, aliases: ['s']
       register 'exec', Exec, aliases: ['e']
+
+      register 'secret', Secret, aliases: ['sec'] do |prefix|
+        prefix.register 'get', Secrets::Get, aliases: ['g']
+        prefix.register 'set', Secrets::Set, aliases: ['g']
+      end
     end
   end
 end
