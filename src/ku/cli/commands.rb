@@ -8,7 +8,11 @@ module Ku
 
       register 'logs', Logs, aliases: ['l']
       register 'pods', Pods, aliases: ['p']
-      register 'context', Context, aliases: ['c']
+
+      register 'context', Context, aliases: ['c'] do |prefix|
+        prefix.register 'merge', Contexts::Merge
+      end
+
       register 'switch', Contexts::Switch, aliases: ['s']
       register 'exec', Exec, aliases: ['e']
 

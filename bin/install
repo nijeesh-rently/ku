@@ -41,3 +41,7 @@ then
 else
     echo "Zsh could not be found. Completions will not be added."
 fi
+
+echo "If you want to merge your kubectl config files for different clusters, run 'ku context merge --help' for more information."
+
+echo "Installation complete. Run 'ku' to start the app."

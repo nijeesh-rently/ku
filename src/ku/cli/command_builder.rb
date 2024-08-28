@@ -5,6 +5,8 @@ module Ku
     # helper class to build kubectl commands
     class CommandBuilder
       BASE_COMMAND = 'kubectl '
+      KUBE_CONFIG_PATH = File.expand_path('~/.kube/config')
+
       attr_reader :command
 
       def initialize(use_context: true)
