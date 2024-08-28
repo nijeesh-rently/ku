@@ -2,7 +2,10 @@
 
 source 'https://rubygems.org'
 
-gem 'byebug'
 gem 'dry-cli'
-gem 'standard'
 gem 'zeitwerk'
+
+group :development do
+  gem 'byebug'
+  gem 'standard'
+end
