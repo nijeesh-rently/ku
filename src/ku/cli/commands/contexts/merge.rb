@@ -2,6 +2,8 @@
 
 require 'yaml'
 require 'fileutils'
+require 'deep_merge/rails_compat'
+
 
 module Ku
   module CLI
@@ -30,7 +32,7 @@ module Ku
             configs.each do |config_file|
               config_file_content = YAML.safe_load(File.read(config_file))
 
-              config = config.merge config_file_content
+              config = config.deeper_merge config_file_content
             end
 
             # copy the old config to a backup file and write the new config
