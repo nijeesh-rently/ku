@@ -30,7 +30,7 @@ module Ku
             configs.each do |config_file|
               config_file_content = YAML.safe_load(File.read(config_file))
 
-              config = merge(config, config_file_content)
+              config = config.merge config_file_content
             end
 
             # copy the old config to a backup file and write the new config
