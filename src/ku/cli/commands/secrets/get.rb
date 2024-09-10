@@ -22,7 +22,7 @@ module Ku
             @command_builder.append("-o go-template='{{ range $key, $value := .data }}{{ printf \"%s=%s\\n\" $key ($value | base64decode) }}{{ end }}'")
             # rubocop:enable Layout/LineLength
             @command_builder.append("| grep -i #{filter}") if filter
-            @executor.execute!(return_output:, print_output: false)
+            @executor.execute!(return_output: return_output, print_output: false)
           end
 
           def self.get_envs_for_pod(podname)

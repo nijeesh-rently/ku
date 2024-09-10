@@ -5,7 +5,7 @@ module Ku
     module Commands
       # base command class all commands inherit from
       class Base < Dry::CLI::Command
-        def initialize(**)
+        def initialize()
           @command_builder = CommandBuilder.new
           @executor = Executor.new(@command_builder)
           super

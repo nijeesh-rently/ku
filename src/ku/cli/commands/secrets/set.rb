@@ -29,12 +29,12 @@ module Ku
 
             return unless $stdin.gets.chomp.casecmp('y').zero?
 
-            apply_envs(envs_hash)
+            apply_envs(envs_hash, name)
           end
 
           private
 
-          def apply_envs(envs)
+          def apply_envs(envs, name)
             json_envs = JSON.generate(envs)
             @command_builder.append("patch secret #{name}")
             @command_builder.append('--type merge')

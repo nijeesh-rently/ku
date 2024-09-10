@@ -38,7 +38,7 @@ module Ku
         end
 
         def self.fetch_pods(name)
-          pods = new.call(name:, only_name: true)&.split("\n")
+          pods = new.call(name: name, only_name: true)&.split("\n")
           raise 'Pod not found' if pods.empty?
 
           pods
