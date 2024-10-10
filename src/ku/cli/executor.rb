@@ -16,8 +16,14 @@ module Ku
           puts result if print_output
           result
         else
-          system(command)
+          make_system_call(command)
         end
+      end
+
+      private
+
+      def make_system_call(command)
+        spawn command
       end
     end
   end
