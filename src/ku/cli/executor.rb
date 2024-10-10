@@ -20,10 +20,8 @@ module Ku
         end
       end
 
-      private
-
       def make_system_call(command)
-        spawn command
+        exec command
       end
     end
   end

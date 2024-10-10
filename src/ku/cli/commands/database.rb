@@ -18,7 +18,7 @@ module Ku
           raise "DATABASE_URL not found" unless database_url
 
           puts "Connecting to database: #{database_url}"
-          system("psql #{database_url}")
+          @executor.make_system_call("psql #{database_url}")
         end
 
         def database_url(envs)
